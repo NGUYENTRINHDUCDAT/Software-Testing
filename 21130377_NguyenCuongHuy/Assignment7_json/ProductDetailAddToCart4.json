@@ -1,0 +1,151 @@
+{
+    "configuration": {
+        "device": {
+            "orientation": "landscape",
+            "deviceName": "Desktop"
+        }
+    },
+    "type": "clickpath",
+    "version": "1.0",
+    "events": [
+        {
+            "description": "Loading of \"https://demo.nopcommerce.com/\"",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {},
+            "type": "navigate",
+            "url": "https://demo.nopcommerce.com/"
+        },
+        {
+            "description": "click",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "dom",
+                        "value": "document.evaluate('//button[@type=\\'button\\']', document, null, XPathResult.ANY_TYPE, null).iterateNext()"
+                    }
+                ]
+            },
+            "type": "click",
+            "button": 0
+        },
+        {
+            "description": "click",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "css",
+                        "value": "#product_attribute_1"
+                    }
+                ]
+            },
+            "type": "click",
+            "button": 0
+        },
+        {
+            "description": "select option",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {},
+            "type": "javascript",
+            "javaScript": "\n                    let add = false;\n                    let x = typeof $ !== 'undefined' ? $('#product_attribute_1')[0] : document.querySelector('#product_attribute_1');\n                    for (i = 0; i < x.options.length; i++) {\n                        if (x.options[i].text === \"2.2 GHz Intel Pentium Dual-Core E2200\") {\n                            if(add) {\n                                x.options[i].selected = true;\n                            } else {\n                                x.options.selectedIndex = i;\n                            }\n                        }\n                    }"
+        },
+        {
+            "description": "click",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "css",
+                        "value": "#product_attribute_2"
+                    }
+                ]
+            },
+            "type": "click",
+            "button": 0
+        },
+        {
+            "description": "select option",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {},
+            "type": "javascript",
+            "javaScript": "\n                    let add = false;\n                    let x = typeof $ !== 'undefined' ? $('#product_attribute_2')[0] : document.querySelector('#product_attribute_2');\n                    for (i = 0; i < x.options.length; i++) {\n                        if (x.options[i].text === \"2 GB\") {\n                            if(add) {\n                                x.options[i].selected = true;\n                            } else {\n                                x.options.selectedIndex = i;\n                            }\n                        }\n                    }"
+        },
+        {
+            "description": "click",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "dom",
+                        "value": "document.evaluate('//dd[@id=\\'product_attribute_input_3\\']/ul/li/label', document, null, XPathResult.ANY_TYPE, null).iterateNext()"
+                    }
+                ]
+            },
+            "type": "click",
+            "button": 0
+        },
+        {
+            "description": "click",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "dom",
+                        "value": "document.evaluate('//dd[@id=\\'product_attribute_input_4\\']/ul/li[2]/label', document, null, XPathResult.ANY_TYPE, null).iterateNext()"
+                    }
+                ]
+            },
+            "type": "click",
+            "button": 0
+        },
+        {
+            "description": "click",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "dom",
+                        "value": "document.evaluate('//dd[@id=\\'product_attribute_input_5\\']/ul/li[3]/label', document, null, XPathResult.ANY_TYPE, null).iterateNext()"
+                    }
+                ]
+            },
+            "type": "click",
+            "button": 0
+        },
+        {
+            "description": "click",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "css",
+                        "value": "#add-to-cart-button-1"
+                    }
+                ]
+            },
+            "type": "click",
+            "button": 0
+        }
+    ]
+}
