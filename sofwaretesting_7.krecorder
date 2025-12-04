@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+<title>sofwaretesting_7</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3" data-tags="">UpdateCart</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>https://demo.nopcommerce.com/htc-smartphone<datalist><option>https://demo.nopcommerce.com/htc-smartphone</option></datalist></td><td></td></tr>
+<tr><td>click</td><td>id=add-to-cart-button-18<datalist><option>id=add-to-cart-button-18</option></datalist></td><td></td></tr>
+<tr><td>pause</td><td>2000<datalist><option>20000</option><option>2000</option></datalist></td><td></td></tr>
+<tr><td>open</td><td>https://demo.nopcommerce.com/cart<datalist><option>https://demo.nopcommerce.com/cart</option></datalist></td><td></td></tr>
+<tr><td>pause</td><td>2000<datalist><option>2000</option></datalist></td><td></td></tr>
+<tr><td>runScript</td><td>document.querySelector('.qty-input').value = '5'<datalist><option>document.querySelector('.qty-input').value = '5'</option></datalist></td><td></td></tr>
+<tr><td>pause</td><td>1000<datalist><option>1000</option></datalist></td><td></td></tr>
+<tr><td>verifyValue</td><td>css=.qty-input<datalist><option>css=.qty-input</option></datalist></td><td>5</td></tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3" data-tags="">CheckOutGuest</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>https://demo.nopcommerce.com/cart<datalist><option>https://demo.nopcommerce.com/cart</option></datalist></td><td></td></tr>
+<tr><td>click</td><td>id=termsofservice<datalist><option>id=termofservice</option><option>id=termsofservice</option></datalist></td><td></td></tr>
+<tr><td>click</td><td>id=checkout<datalist><option>id=checkout</option></datalist></td><td></td></tr>
+<tr><td>pause</td><td>1000<datalist><option>1000</option></datalist></td><td></td></tr>
+<tr><td>click</td><td>class=button-1 checkout-as-guest-button<datalist><option>class=checkout-as-guest-button</option><option>class=button-1 checkout-as-guest-button</option></datalist></td><td></td></tr>
+<tr><td>type</td><td>id=BillingNewAddress_FirstName<datalist><option>id=BillingNewAddress_FirstName</option></datalist></td><td>Nguyen</td></tr>
+<tr><td>type</td><td>id=BillingNewAddress_LastName<datalist><option>id=BillingNewAddress_LastName</option></datalist></td><td>Van A</td></tr>
+<tr><td>type</td><td>id=BillingNewAddress_Email<datalist><option>id=BillingNewAddress_Email</option></datalist></td><td>auto@test.com</td></tr>
+<tr><td>click</td><td>id=BillingNewAddress_CountryId<datalist><option>id=BillingNewAddress_CountryId</option><option>name=BillingNewAddress.CountryId</option><option>xpath=//select[@id='BillingNewAddress_CountryId']</option><option>xpath=//div[@id='billing-new-address-form']/div/div/div[5]/select</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Country:'])[1]/following::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Company:'])[1]/following::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='*'])[4]/preceding::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='State / province:'])[1]/preceding::select[1]</option><option>xpath=//div[5]/select</option><option>css=#BillingNewAddress_CountryId</option></datalist></td><td></td></tr>
+<tr><td>type</td><td>id=BillingNewAddress_City<datalist><option>id=BillingNewAddress_City</option></datalist></td><td>New York</td></tr>
+<tr><td>click</td><td>id=BillingNewAddress_StateProvinceId<datalist><option>id=BillingNewAddress_StateProvinceId</option><option>name=BillingNewAddress.StateProvinceId</option><option>xpath=//select[@id='BillingNewAddress_StateProvinceId']</option><option>xpath=//div[@id='billing-new-address-form']/div/div/div[6]/select</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='State / province:'])[1]/following::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='*'])[4]/following::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='City:'])[1]/preceding::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='*'])[5]/preceding::select[1]</option><option>xpath=//div[6]/select</option><option>css=#BillingNewAddress_StateProvinceId</option></datalist></td><td></td></tr>
+<tr><td>select</td><td>id=BillingNewAddress_StateProvinceId<datalist><option>id=BillingNewAddress_StateProvinceId</option><option>name=BillingNewAddress.StateProvinceId</option><option>xpath=//select[@id='BillingNewAddress_StateProvinceId']</option><option>xpath=//div[@id='billing-new-address-form']/div/div/div[6]/select</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='State / province:'])[1]/following::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='*'])[4]/following::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='City:'])[1]/preceding::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='*'])[5]/preceding::select[1]</option><option>xpath=//div[6]/select</option><option>css=#BillingNewAddress_StateProvinceId</option></datalist></td><td>label=Alabama</td></tr>
+<tr><td>type</td><td>id=BillingNewAddress_Address1<datalist><option>id=BillingNewAddress_Address1</option></datalist></td><td>123 Street</td></tr>
+<tr><td>type</td><td>id=BillingNewAddress_ZipPostalCode<datalist><option>id=BillingNewAddress_ZipPostalCode</option></datalist></td><td>10001</td></tr>
+<tr><td>type</td><td>id=BillingNewAddress_PhoneNumber<datalist><option>id=BillingNewAddress_PhoneNumber</option></datalist></td><td>123456789</td></tr>
+<tr><td>click</td><td>name=save<datalist><option>name=save</option></datalist></td><td></td></tr>
+<tr><td>pause</td><td>2000<datalist><option>2000</option></datalist></td><td></td></tr>
+<tr><td>verifyTextPresent</td><td>Shipping method<datalist><option>Shipping method</option></datalist></td><td></td></tr>
+</tbody></table>
+</body>
+</html>
