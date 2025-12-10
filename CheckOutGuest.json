@@ -1,0 +1,264 @@
+{
+    "configuration": {
+        "device": {
+            "orientation": "landscape",
+            "deviceName": "Desktop"
+        }
+    },
+    "type": "clickpath",
+    "version": "1.0",
+    "events": [
+        {
+            "description": "Loading of \"https://demo.nopcommerce.com/cart\"",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {},
+            "type": "navigate",
+            "url": "https://demo.nopcommerce.com/cart"
+        },
+        {
+            "description": "click",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "css",
+                        "value": "#termsofservice"
+                    }
+                ]
+            },
+            "type": "click",
+            "button": 0
+        },
+        {
+            "description": "click",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "css",
+                        "value": "#checkout"
+                    }
+                ]
+            },
+            "type": "click",
+            "button": 0
+        },
+        {
+            "description": "pause",
+            "target": {},
+            "type": "javascript",
+            "javaScript": "api.startAsyncSyntheticEvent(); \n                setTimeout(() => {api.finish()}, 1000);"
+        },
+        {
+            "description": "click",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "dom",
+                        "value": "document.evaluate('class=button-1 checkout-as-guest-button', document, null, XPathResult.ANY_TYPE, null).iterateNext()"
+                    }
+                ]
+            },
+            "type": "click",
+            "button": 0
+        },
+        {
+            "description": "type Nguyen",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "css",
+                        "value": "#BillingNewAddress_FirstName"
+                    }
+                ]
+            },
+            "type": "keystrokes",
+            "textValue": "Nguyen",
+            "simulateBlurEvent": true,
+            "masked": false
+        },
+        {
+            "description": "type Van A",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "css",
+                        "value": "#BillingNewAddress_LastName"
+                    }
+                ]
+            },
+            "type": "keystrokes",
+            "textValue": "Van A",
+            "simulateBlurEvent": true,
+            "masked": false
+        },
+        {
+            "description": "type auto@test.com",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "css",
+                        "value": "#BillingNewAddress_Email"
+                    }
+                ]
+            },
+            "type": "keystrokes",
+            "textValue": "auto@test.com",
+            "simulateBlurEvent": true,
+            "masked": false
+        },
+        {
+            "description": "click",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "css",
+                        "value": "#BillingNewAddress_CountryId"
+                    }
+                ]
+            },
+            "type": "click",
+            "button": 0
+        },
+        {
+            "description": "type New York",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "css",
+                        "value": "#BillingNewAddress_City"
+                    }
+                ]
+            },
+            "type": "keystrokes",
+            "textValue": "New York",
+            "simulateBlurEvent": true,
+            "masked": false
+        },
+        {
+            "description": "click",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "css",
+                        "value": "#BillingNewAddress_StateProvinceId"
+                    }
+                ]
+            },
+            "type": "click",
+            "button": 0
+        },
+        {
+            "description": "select option",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {},
+            "type": "javascript",
+            "javaScript": "\n                    let add = false;\n                    let x = typeof $ !== 'undefined' ? $('#BillingNewAddress_StateProvinceId')[0] : document.querySelector('#BillingNewAddress_StateProvinceId');\n                    for (i = 0; i < x.options.length; i++) {\n                        if (x.options[i].text === \"Alabama\") {\n                            if(add) {\n                                x.options[i].selected = true;\n                            } else {\n                                x.options.selectedIndex = i;\n                            }\n                        }\n                    }"
+        },
+        {
+            "description": "type 123 Street",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "css",
+                        "value": "#BillingNewAddress_Address1"
+                    }
+                ]
+            },
+            "type": "keystrokes",
+            "textValue": "123 Street",
+            "simulateBlurEvent": true,
+            "masked": false
+        },
+        {
+            "description": "type 10001",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "css",
+                        "value": "#BillingNewAddress_ZipPostalCode"
+                    }
+                ]
+            },
+            "type": "keystrokes",
+            "textValue": "10001",
+            "simulateBlurEvent": true,
+            "masked": false
+        },
+        {
+            "description": "type 123456789",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "css",
+                        "value": "#BillingNewAddress_PhoneNumber"
+                    }
+                ]
+            },
+            "type": "keystrokes",
+            "textValue": "123456789",
+            "simulateBlurEvent": true,
+            "masked": false
+        },
+        {
+            "description": "click",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "css",
+                        "value": "[name=\"save\"]"
+                    }
+                ]
+            },
+            "type": "click",
+            "button": 0
+        },
+        {
+            "description": "pause",
+            "target": {},
+            "type": "javascript",
+            "javaScript": "api.startAsyncSyntheticEvent(); \n                setTimeout(() => {api.finish()}, 2000);"
+        }
+    ]
+}

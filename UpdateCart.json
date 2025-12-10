@@ -1,0 +1,98 @@
+{
+    "configuration": {
+        "device": {
+            "orientation": "landscape",
+            "deviceName": "Desktop"
+        }
+    },
+    "type": "clickpath",
+    "version": "1.0",
+    "events": [
+        {
+            "description": "Loading of \"https://demo.nopcommerce.com/htc-smartphone\"",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {},
+            "type": "navigate",
+            "url": "https://demo.nopcommerce.com/htc-smartphone"
+        },
+        {
+            "description": "click",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "css",
+                        "value": "#add-to-cart-button-18"
+                    }
+                ]
+            },
+            "type": "click",
+            "button": 0
+        },
+        {
+            "description": "pause",
+            "target": {},
+            "type": "javascript",
+            "javaScript": "api.startAsyncSyntheticEvent(); \n                setTimeout(() => {api.finish()}, 2000);"
+        },
+        {
+            "description": "Loading of \"https://demo.nopcommerce.com/cart\"",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {},
+            "type": "navigate",
+            "url": "https://demo.nopcommerce.com/cart"
+        },
+        {
+            "description": "pause",
+            "target": {},
+            "type": "javascript",
+            "javaScript": "api.startAsyncSyntheticEvent(); \n                setTimeout(() => {api.finish()}, );"
+        },
+        {
+            "description": "click",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {
+                "locators": [
+                    {
+                        "type": "css",
+                        "value": ".qty-input"
+                    }
+                ]
+            },
+            "type": "click",
+            "button": 0
+        },
+        {
+            "description": "send keys",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {},
+            "type": "javascript",
+            "javaScript": "\n                const keys = [8, 53, 13];\n                const elem = typeof $ !== 'undefined' ? $('.qty-input')[0] : document.querySelector('.qty-input');\n                keys.forEach((key) => {\n                    let eventObj = document.createEvent(\"Events\");\n                    eventObj.initEvent(\"keydown\", true, true);\n                    eventObj.key = key;\n                    eventObj.keyCode = key;\n                    eventObj.which = key;\n                    eventObj.charCode = key;\n                    \n                    elem.dispatchEvent(eventObj);\n                    eventObj = document.createEvent(\"Events\");\n                    eventObj.initEvent(\"keypress\", true, true);\n                    eventObj.key = key;\n                    eventObj.keyCode = key;\n                    eventObj.which = key;\n                    eventObj.charCode = key;\n                    elem.dispatchEvent(eventObj);\n                    \n                    eventObj = document.createEvent(\"Events\");\n                    eventObj.initEvent(\"keyup\", true, true);\n                    eventObj.key = key;\n                    eventObj.keyCode = key;\n                    eventObj.which = key;\n                    eventObj.charCode = key;\n                    elem.dispatchEvent(eventObj);\n                });"
+        },
+        {
+            "description": "pause",
+            "target": {},
+            "type": "javascript",
+            "javaScript": "api.startAsyncSyntheticEvent(); \n                setTimeout(() => {api.finish()}, );"
+        },
+        {
+            "description": "assert value",
+            "wait": {
+                "waitFor": "page_complete"
+            },
+            "target": {},
+            "type": "javascript",
+            "javaScript": "let elem = typeof $ !== 'undefined' ? $('.qty-input')[0] : document.querySelector('.qty-input');\n                    if((elem.type === \"checkbox\" || elem.type === \"radio\") && (\"5\" === \"on\" || \"5\" === \"off\")) {\n                        if(elem.checked && \"5\" === \"off\") {\n                            api.fail(\"Checkbox did not have state 5\");\n                        } else if(!elem.checked && \"5\" === \"on\") {\n                            api.fail(\"Checkbox did not have state 5\");\n                        }\n                    } else if(!(elem.value === \"5\")) {\n                        api.fail(\"Element did not have value 5\");\n                    }"
+        }
+    ]
+}
